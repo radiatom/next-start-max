@@ -1,0 +1,46 @@
+name: deploy-production
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_APP_URL: http://localhost:3000
+      NEXT_PUBLIC_SERVER_URL: http://localhost:3000/api/graphql
+
+    strategy:
+      matrix:
+        node-version: [ 20.x ]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build applications
+        run: yarn build
+
+      - name: Start the application in the background
+        run: yarn start &
+
+      - name: Wait for the application to start
+        run:  sleep 5s
+
+#      - name: Run e2e test
+#        run: yarn test:e2e

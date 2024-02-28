@@ -1,0 +1,17 @@
+:root {
+  // font color
+  --font-color-primary: var(--mui-palette-text-primary);
+  --font-color-secondary: var(--mui-palette-text-secondary);
+  // body color
+  --bg-color-primary: var(--mui-palette-background-default);
+  --bg-color-secondary: var(--mui-palette-background-paper);
+  // accent color
+  --accent-color: var(--mui-palette-info-main);
+  // border color
+  --border-primary: 1px solid var(--mui-palette-divider);
+  // box shadow
+  --box-shadow-primary: 0 3px 8px 0 var(--font-color-primary);
+  // scroll
+  --scrollbar-track-color: var(--bg-color-primary);
+  --scrollbar-thumb-color: var(--font-color-primary);
+}

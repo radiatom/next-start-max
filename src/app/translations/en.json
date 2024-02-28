@@ -1,0 +1,15 @@
+{
+  "login": {
+    "title": "Sign In",
+    "subtitle": "Enter your email and password to login",
+    "description": "Admin panel for your application that allows you to manage all your data in one place.",
+    "email": "Email",
+    "pass": "Password",
+    "pass_show": "Show password",
+    "pass_hide": "Hide password",
+    "remember": "Remember me",
+    "locale":"Change language to",
+    "theme_light":"Change to dark",
+    "theme_dark":"Change to light"
+  }
+}
